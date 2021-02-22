@@ -31,23 +31,24 @@
     </description>
     <groupId>org.keycloak</groupId>
     <artifactId>keycloak-parent</artifactId>
-    <version>12.0.3</version>
+    <version>12.0.4-e2e</version>
     <packaging>pom</packaging>
 
     <properties>
 
+        <skipTests>true</skipTests>
         <!--
-        Performing a Wildfly upgrade? Run the:
+         Performing a Wildfly upgrade? Run the:
 
-             "./misc/scripts/upgrade-wildfly/upgrade-keycloak-to-wildfly-tag.py"
+              "./misc/scripts/upgrade-wildfly/upgrade-keycloak-to-wildfly-tag.py"
 
-        script with the corresponding Wildfly tag, e.g. '20.0.0.Final' to get necessary Keycloak bits
-        updated automatically based on corresponding artifact versions used in Wildfly and Wildfly Core
+         script with the corresponding Wildfly tag, e.g. '20.0.0.Final' to get necessary Keycloak bits
+         updated automatically based on corresponding artifact versions used in Wildfly and Wildfly Core
 
-        IMPORTANT: If you add new dependency name / version property below, be sure to update the
-        "./misc/scripts/upgrade-wildfly/upgrade-keycloak-to-wildfly-tag.py" script too to ensure
-        the script continues to work
-        -->
+         IMPORTANT: If you add new dependency name / version property below, be sure to update the
+         "./misc/scripts/upgrade-wildfly/upgrade-keycloak-to-wildfly-tag.py" script too to ensure
+         the script continues to work
+         -->
 
         <product.rhsso.version>7.4.0.GA</product.rhsso.version>
 
@@ -118,6 +119,7 @@
         <version.com.openshift.openshift-restclient-java>8.0.0.Final</version.com.openshift.openshift-restclient-java>
 
         <!-- Others -->
+        <commons-collections.version>3.2.2</commons-collections.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-lang3.version>3.10</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -1528,6 +1530,11 @@
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-cbor</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-lang</groupId>
